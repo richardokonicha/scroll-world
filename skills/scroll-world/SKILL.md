@@ -618,7 +618,10 @@ is the thing most likely to be wrong:
 - Screenshot at scroll positions just before and just after each seam. The two frames
   must be near-identical (the dive's last frame == the connector's first frame). If they
   pop, you used the diorama still instead of the actual rendered frame (redo Step 5), or
-  the crossfade band is too short.
+  the crossfade band is too short. Calibration: judge seams by *composition*, not raw
+  PSNR — at 720p/1080p a correctly frame-locked seam can read ~18–25 dB from detail
+  shimmer alone (observed on a verified-good build); a real mismatch shows as different
+  composition/props, not just softness.
 - Check the console for errors, confirm `video.seekable.end(0) > 0` (blob working), and
   that `currentTime` tracks scroll across each clip's band.
 - **Mobile — full checklist only if the user opted into the mobile version (Step 1.6).**
